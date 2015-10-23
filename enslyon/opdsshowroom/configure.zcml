@@ -29,5 +29,17 @@
       />
 
   <!-- -*- extra stuff goes here -*- -->
+    <class class=".library_showroom.LibraryShowroom">
+        <implements interface=".library_showroom.ILibraryShowroom" />
+    </class>
+
+    <browser:page
+        for=".library_showroom.ILibraryShowroom"
+        name="showroom_view"
+        class=".library_showroom.ShowroomView"
+        template="library_showroom_templates/showroomview.pt"
+        permission="zope2.View"
+        />
+
 
 </configure>
