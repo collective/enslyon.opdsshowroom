@@ -25,11 +25,18 @@ setup(name='enslyon.opdsshowroom',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+          'plone.api',
           'setuptools',
           'plone.app.dexterity',
-          'plone.namedfile [blobs]',
           # -*- Extra requirements: -*-
       ],
+      extras_require={
+          'test': [
+              'plone.app.testing',
+              'plone.app.contenttypes',
+              'plone.app.robotframework[debug]',
+          ],
+      },
       entry_points="""
       # -*- Entry points: -*-
       [z3c.autoinclude.plugin]
