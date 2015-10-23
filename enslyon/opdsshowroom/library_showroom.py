@@ -15,6 +15,9 @@ from plone.namedfile.interfaces import IImageScaleTraversable
 from plone.supermodel import model
 from Products.Five import BrowserView
 
+from requests import request
+from lxml import html
+
 from enslyon.opdsshowroom import MessageFactory as _
 
 
@@ -53,3 +56,12 @@ class ShowroomView(BrowserView):
     """ Showroom view class """
 
     # Add view methods here
+    def renderXQuery(self):
+        """ Render the HTML > body result """ 
+
+        context = self.context
+        headers = {'charset': 'UTF-8'}
+        xquery_response = request('GET', context.xquery_request_url, headers=headers)
+        html_text = html.document_fromstring(xquery_response.text)
+        return html.tostring(html_text.xpath('/html/body')[0])
+

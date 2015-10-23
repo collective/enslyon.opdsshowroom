@@ -28,6 +28,9 @@ setup(name='enslyon.opdsshowroom',
           'plone.api',
           'setuptools',
           'plone.app.dexterity',
+          'requests',
+          'lxml',
+          'lineage.themeselection',
           # -*- Extra requirements: -*-
       ],
       extras_require={
