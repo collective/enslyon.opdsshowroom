@@ -7,18 +7,24 @@ setup(name='enslyon.opdsshowroom',
       version=version,
       description="Showroom for OPDS Feed",
       long_description=open("README.txt").read() + "\n" +
+                       open(os.path.join("docs", "INSTALL.txt")).read() +
                        open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
+        "Environment :: Web Environment",
         "Framework :: Plone",
+        "Framework :: Plone :: 5.0",
+        "Framework :: Plone :: 4.3",
         "Programming Language :: Python",
-        "Topic :: Software Development :: Libraries :: Python Modules",
+        "Programming Language :: Python :: 2.7",
+        "Operating System :: OS Independent",
+        "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
         ],
-      keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
+      keywords='Plone plone rest REST OPDS opds',
+      author='Encolpe DEGOUTE',
+      author_email='encolpe@colpi.org',
+      url='https://github.com/collective/enslyon.opdsshowroom',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['enslyon'],
@@ -28,10 +34,10 @@ setup(name='enslyon.opdsshowroom',
           'plone.api',
           'setuptools',
           'plone.app.dexterity',
+          # -*- Extra requirements: -*-
           'requests',
           'lxml',
-          'lineage.themeselection',
-          # -*- Extra requirements: -*-
+          #'lineage.themeselection',
       ],
       extras_require={
           'test': [
