@@ -11,12 +11,10 @@
   <metal:content-core define-macro="content-core">
 
 
-    <div tal:content="context/Description">Description</div>
-
     <div><a href="" target="_blank"
             tal:attributes="href context/opds_library_link"><span i18n:translate="opds_showroom_libray_link">Go to the Library -></span></a></div>
 
-    <div tal:content="structure view/renderXQuery">HTML Body</div>
+    <div class="libraryView" tal:content="structure view/renderXQuery">HTML Body</div>
 
   </metal:content-core>
 </metal:main>
